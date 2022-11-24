@@ -28,6 +28,11 @@ namespace _3_lab_3_sem
             AddView(labView);
             AddView(panelView1);
             AddView(myDataGridView1);
+
+            panelView1.PanelClicked += (Node node) =>
+            {
+                node.Recolor();
+            };
         }
 
         public void AddView(IView view)
