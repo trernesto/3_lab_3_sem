@@ -28,7 +28,9 @@ namespace _3_lab_3_sem
             labView.Model = Model;
             AddView(labView);
             panelView1.Model = this.Model;
+            myDataGridView1.Model = this.Model;
             AddView(panelView1);
+            AddView(myDataGridView1);
         }
 
         public void AddView(IView view)
@@ -44,6 +46,7 @@ namespace _3_lab_3_sem
 
         private void UpdateAll()
         {
+
         }
 
         public void Remove()
