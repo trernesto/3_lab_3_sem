@@ -32,17 +32,29 @@ namespace _3_lab_3_sem
 
         public void AddView(IView view)
         {
+            view.UpdateView();
             views.Add(view);
         }
 
         public void Add()
         {
             model.addNode(r.Next(100));
+            UpdateAll();
+        }
+
+        private void UpdateAll()
+        {
+            views.ForEach(v => v.UpdateView());
         }
 
         public void Remove()
         {
-            model.RemoveLastNode();
+            if (model.Count > 0) 
+            {
+                model.RemoveLastNode();
+                UpdateAll();
+            }
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
