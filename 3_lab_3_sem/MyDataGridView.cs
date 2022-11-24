@@ -14,8 +14,8 @@ namespace _3_lab_3_sem
 
         public void UpdateView()
         {
-            this.Invalidate();
             UpdateDataGrid();
+            this.Invalidate();
         }
 
         private void UpdateDataGrid()

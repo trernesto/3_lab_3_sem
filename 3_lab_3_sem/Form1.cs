@@ -25,36 +25,29 @@ namespace _3_lab_3_sem
             Model = new MyModel();
             InitializeComponent();
             IView labView = new LabelView(label1);
-            labView.Model = Model;
             AddView(labView);
-            panelView1.Model = this.Model;
-            myDataGridView1.Model = this.Model;
             AddView(panelView1);
             AddView(myDataGridView1);
         }
 
         public void AddView(IView view)
         {
+            view.Model= this.Model;
             model.Changed += new Action(view.UpdateView);
+            view.UpdateView();
         }
 
         public void Add()
         {
             model.addNode(r.Next(100));
-            UpdateAll();
         }
 
-        private void UpdateAll()
-        {
-
-        }
 
         public void Remove()
         {
             if (model.Count > 0) 
             {
                 model.RemoveLastNode();
-                UpdateAll();
             }
             
         }

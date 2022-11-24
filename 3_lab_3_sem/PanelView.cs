@@ -10,6 +10,7 @@ namespace _3_lab_3_sem
 {
     public class PanelView : Panel, IView
     {
+        public event Action PanelClicked;
         public IModel Model 
         { get; set; }
 
