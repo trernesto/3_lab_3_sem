@@ -8,7 +8,7 @@ namespace _3_lab_3_sem
 {
     public interface IView
     {
-        IModel Mode { get; set; }
+        IModel Model { get; set; }
         void UpdateView();
     }
 }

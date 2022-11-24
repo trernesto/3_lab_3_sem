@@ -16,7 +16,7 @@ namespace _3_lab_3_sem
         List<IView> views = new List<IView>();
         IModel model;
         IModel IController.Model 
-        { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        { get => model; set => model = value; }
 
         public Form1()
         {

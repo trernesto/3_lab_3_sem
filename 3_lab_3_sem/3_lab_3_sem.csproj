@@ -55,6 +55,7 @@
     <Compile Include="IController.cs" />
     <Compile Include="IModel.cs" />
     <Compile Include="IView.cs" />
+    <Compile Include="LabelView.cs" />
     <Compile Include="MyModel.cs" />
     <Compile Include="Node.cs" />
     <Compile Include="Program.cs" />
