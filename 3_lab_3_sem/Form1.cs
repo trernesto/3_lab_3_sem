@@ -15,7 +15,6 @@ namespace _3_lab_3_sem
     public partial class Form1 : Form, IController
     {
         static Random r = new Random();
-        List<IView> views = new List<IView>();
         IModel model;
         IModel IController.Model 
         { get => model; set => model = value; }
@@ -34,8 +33,7 @@ namespace _3_lab_3_sem
 
         public void AddView(IView view)
         {
-            view.UpdateView();
-            views.Add(view);
+            model.Changed += new Action(view.UpdateView);
         }
 
         public void Add()
@@ -46,7 +44,6 @@ namespace _3_lab_3_sem
 
         private void UpdateAll()
         {
-            views.ForEach(v => v.UpdateView());
         }
 
         public void Remove()

@@ -8,6 +8,7 @@ namespace _3_lab_3_sem
 {
     public interface IModel
     {
+        event Action Changed;
         void addNode(int value);
         void RemoveLastNode();
         int Count { get; }

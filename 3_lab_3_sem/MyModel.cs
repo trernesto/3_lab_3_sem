@@ -14,13 +14,24 @@ namespace _3_lab_3_sem
         public IEnumerable<Node> AllNodes => nodes;
 
         static Random r = new Random();
+
+        public event Action Changed;
+
         public void addNode(int value)
         {
+            if (Changed != null)
+            {
+                Changed();
+            }
             nodes.AddFirst(new Node(value, r.Next(10), r.Next(10)));
         }
 
         public void RemoveLastNode()
         {
+            if (Changed != null)
+            {
+                Changed();
+            }
             nodes.RemoveLast();
         }
     }
