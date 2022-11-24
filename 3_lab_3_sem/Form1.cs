@@ -28,6 +28,8 @@ namespace _3_lab_3_sem
             IView labView = new LabelView(label1);
             labView.Model = Model;
             AddView(labView);
+            panelView1.Model = this.Model;
+            AddView(panelView1);
         }
 
         public void AddView(IView view)
