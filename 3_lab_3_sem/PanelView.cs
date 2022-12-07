@@ -10,8 +10,6 @@ namespace _3_lab_3_sem
 {
     public class PanelView : Panel, IView
     {
-        public delegate void ChangeColor(Node node);
-        public event ChangeColor PanelClicked;
         public IModel Model 
         { get; set; }
 
@@ -25,27 +23,27 @@ namespace _3_lab_3_sem
             base.OnPaint(e);
             if (Model == null) return;
             Graphics g = e.Graphics;
+            double dividend = 1;
+            double divisor = 2;
+            int height = 0;
             foreach (Node n in Model.AllNodes)
             {
-                g.DrawEllipse(n.Color, n.X * 20, n.Y * 20, 20, 20);
-            }
-        }
-        protected override void OnMouseClick(MouseEventArgs e)
-        {
-            base.OnMouseClick(e);
-            Node SavedNode = null;
-            foreach (Node n in Model.AllNodes)
-            {
-                if (n.X == e.X / 20 && n.Y == e.Y / 20 )
+                int nodeX = (int)(dividend / divisor * this.Size.Width);
+                g.DrawEllipse(n.Color, 
+                    nodeX, 
+                    height, 20, 20);
+                g.DrawString(n.Value.ToString(),
+                    Font,
+                    Brushes.Black,
+                    nodeX + 3, height + 4);
+                dividend += 2;
+                if (dividend / divisor > 1)
                 {
-                    SavedNode = n;
+                    dividend = 1;
+                    height = this.Size.Height - (int)(this.Size.Height / divisor);
+                    divisor *= 2;
                 }
             }
-            if (SavedNode != null)
-            {
-                PanelClicked(SavedNode);
-            }
-            UpdateView();
         }
     }
 }

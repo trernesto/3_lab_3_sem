@@ -30,10 +30,7 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelView1 = new _3_lab_3_sem.PanelView();
-            this.myDataGridView1 = new _3_lab_3_sem.MyDataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // button1
@@ -48,7 +45,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 70);
+            this.button2.Location = new System.Drawing.Point(13, 105);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(119, 51);
             this.button2.TabIndex = 1;
@@ -56,48 +53,28 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 124);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "label1";
-            // 
             // panelView1
             // 
-            this.panelView1.Location = new System.Drawing.Point(149, 0);
+            this.panelView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panelView1.Location = new System.Drawing.Point(138, 0);
             this.panelView1.Model = null;
             this.panelView1.Name = "panelView1";
-            this.panelView1.Size = new System.Drawing.Size(651, 221);
+            this.panelView1.Size = new System.Drawing.Size(662, 447);
             this.panelView1.TabIndex = 3;
-            // 
-            // myDataGridView1
-            // 
-            this.myDataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.myDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.myDataGridView1.Location = new System.Drawing.Point(149, 228);
-            this.myDataGridView1.Model = null;
-            this.myDataGridView1.Name = "myDataGridView1";
-            this.myDataGridView1.Size = new System.Drawing.Size(639, 210);
-            this.myDataGridView1.TabIndex = 4;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.myDataGridView1);
             this.Controls.Add(this.panelView1);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.myDataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -105,9 +82,7 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Label label1;
         private PanelView panelView1;
-        private MyDataGridView myDataGridView1;
     }
 }
 

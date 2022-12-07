@@ -12,17 +12,13 @@ namespace _3_lab_3_sem
 {
     public class Node
     {
-        private int x,y, value;
+        private int value;
         private Pen color;
-        public int X => x;
-        public int Y => y;
         public int Value => value;
         public Pen Color { get => color; set => color = value; }
 
-        public Node(int value, int x, int y)
+        public Node(int value)
         {
-            this.x = x;
-            this.y = y;
             this.value = value;
             color = Pens.Red;
         }

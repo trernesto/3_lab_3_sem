@@ -24,15 +24,7 @@ namespace _3_lab_3_sem
         {
             Model = new MyModel();
             InitializeComponent();
-            IView labView = new LabelView(label1);
-            AddView(labView);
             AddView(panelView1);
-            AddView(myDataGridView1);
-
-            panelView1.PanelClicked += (Node node) =>
-            {
-                node.Recolor();
-            };
         }
 
         public void AddView(IView view)
