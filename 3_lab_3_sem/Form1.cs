@@ -25,18 +25,19 @@ namespace _3_lab_3_sem
             Model = new MyModel();
             InitializeComponent();
             AddView(panelView1);
+            AddView(messageView1);
         }
 
         public void AddView(IView view)
         {
-            view.Model= this.Model;
+            view.Model = this.Model;
             model.Changed += new Action(view.UpdateView);
             view.UpdateView();
         }
 
-        public void Add()
+        public void Add(int value)
         {
-            model.addNode(r.Next(100));
+            model.addNode(value);
         }
 
 
@@ -44,14 +45,19 @@ namespace _3_lab_3_sem
         {
             if (model.Count > 0) 
             {
-                model.RemoveLastNode();
+                int value = model.RemoveLastNode();
             }
             
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Add();
+            int value = Convert.ToInt32(numericUpDown1.Value);
+            if (value == 0)
+            {
+                value = r.Next(100);
+            }
+            Add(value);
         }
 
         private void button2_Click(object sender, EventArgs e)

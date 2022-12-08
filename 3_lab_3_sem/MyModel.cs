@@ -10,6 +10,7 @@ namespace _3_lab_3_sem
     {
         List<Node> heap = new List<Node>();
         public int Count => heap.Count;
+        public String Message { get; set; }
 
         public IEnumerable<Node> AllNodes => heap;
 
@@ -20,19 +21,22 @@ namespace _3_lab_3_sem
         public void addNode(int value)
         {
             Insert(value);
+            Message = $"Added element with value: {value}";
             if (Changed != null)
             {
                 Changed();
             }
         }
 
-        public void RemoveLastNode()
+        public int RemoveLastNode()
         {
-            RemoveMin();
+            int value = RemoveMin();
+            Message = $"Removed element with value {value}";
             if (Changed != null)
             {
                 Changed();
             }
+            return value;
         }
 
         void Insert(int x)
@@ -50,8 +54,9 @@ namespace _3_lab_3_sem
             }
         }
 
-        void RemoveMin()
+        int RemoveMin()
         {
+            int value = heap[0].Value;
             heap[0] = heap[heap.Count - 1];
             heap.RemoveAt(heap.Count - 1);
             int i = 0;
@@ -74,6 +79,7 @@ namespace _3_lab_3_sem
                     i = j;
                 }
             }
+            return value;
         }
     }
 }

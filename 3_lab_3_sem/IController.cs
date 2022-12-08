@@ -10,7 +10,7 @@ namespace _3_lab_3_sem
     {
         IModel Model { get; set; }
         void AddView(IView view);
-        void Add();
+        void Add(int value);
         void Remove();
     }
 }

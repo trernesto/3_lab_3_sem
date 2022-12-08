@@ -56,6 +56,9 @@
     <Compile Include="IModel.cs" />
     <Compile Include="IView.cs" />
     <Compile Include="LabelView.cs" />
+    <Compile Include="MessageView.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="MyDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>

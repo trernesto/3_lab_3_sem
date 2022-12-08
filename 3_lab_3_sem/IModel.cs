@@ -10,8 +10,9 @@ namespace _3_lab_3_sem
     {
         event Action Changed;
         void addNode(int value);
-        void RemoveLastNode();
+        int RemoveLastNode();
         int Count { get; }
+        string Message { get; set; }
         IEnumerable<Node> AllNodes { get; }
     }
 }

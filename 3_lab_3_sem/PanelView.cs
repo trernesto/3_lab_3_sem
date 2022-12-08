@@ -28,14 +28,14 @@ namespace _3_lab_3_sem
             int height = 0;
             foreach (Node n in Model.AllNodes)
             {
-                int nodeX = (int)(dividend / divisor * this.Size.Width);
-                g.DrawEllipse(n.Color, 
-                    nodeX, 
+                int width = (int)(dividend / divisor * this.Size.Width);
+                g.DrawEllipse(n.Color,
+                    width, 
                     height, 20, 20);
                 g.DrawString(n.Value.ToString(),
                     Font,
                     Brushes.Black,
-                    nodeX + 3, height + 4);
+                    width + 3, height + 4);
                 dividend += 2;
                 if (dividend / divisor > 1)
                 {
